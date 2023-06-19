@@ -1,3 +1,4 @@
+
 const tutorials = [
   'what does the this keyword mean?',
   'What is the Constructor OO pattern?',
@@ -11,6 +12,15 @@ const tutorials = [
   'what is JSONP?'
 ];
 
+const capitalizeFirstLetter = (word) => {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+};
+
 const titleCased = () => {
-  return tutorials
-}
+  return tutorials.map(tutorial => {
+    const words = tutorial.split(" ");
+    const capitalizedWords = words.map(capitalizeFirstLetter);
+    return capitalizedWords.join(" ");
+  });
+};
+
